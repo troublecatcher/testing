@@ -13,9 +13,9 @@
         <h3>Фильтрация</h3><input type="button" value="→" onclick="showFilter();" id="showFilterBtn">
         <form name="filterForm">
         <div class="filterOption">
-            <label>Дата выхода с </label>
+            <label>Дата выхода от </label>
             <input type="date" name="date1" onchange="filterForm.date2.min = filterForm.date1.value">
-            <label> по </label>
+            <label> до </label>
             <input type="date" name="date2" onchange="filterForm.date1.max = filterForm.date2.value">
             <input type="checkbox" name="dateCheck">
         </div>
