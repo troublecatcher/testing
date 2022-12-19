@@ -18,6 +18,7 @@ function showFilter(){
         filterForm.style.opacity = '1';
     }, 100);
 }
+
 function hideFilter(){
     document.getElementById('showFilterBtn').value = '→';
     document.getElementById('showFilterBtn').onclick = showFilter;
@@ -26,6 +27,7 @@ function hideFilter(){
         filterForm.style.display = 'none';
     }, 200);
 }
+
 function filtrate(){
     let filtered = films,
         genreSel = document.getElementById('genreF'),
@@ -54,6 +56,7 @@ function filtrate(){
         });
     refresh(filtered);
 }
+
 function genreFilter(){
     for (let item of films) {
         if(genres.includes(item.genre) || item.genre =='')
@@ -67,6 +70,7 @@ function genreFilter(){
         document.getElementById('genreF').appendChild(opt);
     }
 }
+
 function countryFilter(){
     for (let item of films) {
         if(countries.includes(item.country) || item.country =='')
@@ -80,6 +84,7 @@ function countryFilter(){
         document.getElementById('countryF').appendChild(opt);
     }
 }
+
 genreFilter();
 countryFilter();
 let butt = document.createElement('input');
@@ -163,6 +168,7 @@ function addFilm(){
     genreFilter();
     countryFilter();
 }
+
 function addCard(film){
     
     let filmCard = document.createElement("div");
@@ -182,14 +188,17 @@ function addCard(film){
     filmPhoto.style.height = '150px';
     filmPhoto.style.borderRadius = '15px';
 }
+
 function callForm(){
     addModal(showForm, form);
 }
+
 function showForm(form, modal){
     form.style.display = 'flex';
     modal.appendChild(formDiv);
     
 }
+
 function addModal(func, item){
     let overlay = document.createElement('div'),
         modal = document.createElement('div');
@@ -249,6 +258,7 @@ function filmInfo(film, modal, overlay){
         countryFilter();
     };
 }
+
 function refresh(arr){
     arr.forEach(e => {
         addCard(e);
